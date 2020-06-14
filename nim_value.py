@@ -1,3 +1,8 @@
+def remove_a_vertex():
+    pass
+def remove_a_hyperedge():
+    pass
+
 def oddly_uniform(number_of_vertices, number_of_hyperedges):
     if number_of_vertices %2 == 0 and number_of_hyperedges %2 == 0:
         nim_value = 0
@@ -17,6 +22,14 @@ def evenly_uniform(number_of_vertices, number_of_hyperedges):
         nim_value = 2
     else:
         nim_value = 3
+    return nim_value
+def find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype):
+    if the_result_monotype == "oddly":
+        nim_value = oddly_uniform(number_of_vertices, number_of_hyperedges)
+    elif the_result_monotype == "evenly":
+        nim_value = evenly_uniform(number_of_vertices, number_of_hyperedges)
+    else:
+        pass
     return nim_value
 def check_monotype(number_of_hyperedges,hyperedges):
     result_monotype = []
@@ -49,4 +62,6 @@ def main():
     print("The list of the vertices: ",vertices)
     print("The list of the hyperedges: ",hyperedges)
     print(the_result_monotype)
+    nim_value = find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype)
+    print("the nim_value is: ",nim_value)
 main()
