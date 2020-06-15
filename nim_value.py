@@ -9,18 +9,26 @@ def remove_a_step(starting_list_1,i):
             starting_list_2.remove(starting_list_1[j])
     return starting_list_2
 
-def abc(starting_list_2):
+
+
+
+def get_vertices(starting_list):
     vertices = []
+      
+    for i in range(len(starting_list)):
+        if len(starting_list[i]) == 1:
+            vertices.append(starting_list[i])
+
+    print("The list of the vertices: ",vertices)
+    return vertices
+
+
+def get_hyperedges(starting_list):
     hyperedges = []
     
-    for i in range(len(starting_list_2)):
-        if len(starting_list_2[i]) == 1:
-            vertices.append(starting_list_2[i])
-        else:
-            hyperedges.append(starting_list_2[i])
-    number_of_vertices = len(vertices)
-    number_of_hyperedges = len(hyperedges)
-    print("The list of the vertices: ",vertices)
+    for i in range(len(starting_list)):
+        if len(starting_list[i]) != 1:
+            hyperedges.append(starting_list[i])
     print("The list of the hyperedges: ",hyperedges)
     return hyperedges
 
@@ -79,28 +87,41 @@ def main():
         starting_list.append(starting)
 
     starting_list_1=copy.deepcopy(starting_list)
-    vertices = []
-    hyperedges = []
-    
-    for i in range (starting_number):
-        if len(starting_list[i]) == 1:
-            vertices.append(starting_list[i])
-        else:
-            hyperedges.append(starting_list[i])
-    number_of_vertices = len(vertices)
-    number_of_hyperedges = len(hyperedges)
-    the_result_monotype = check_monotype(number_of_hyperedges,hyperedges)
-    print("The list of the vertices: ",vertices)
-    print("The list of the hyperedges: ",hyperedges)
+    vertices = get_vertices(starting_list_1)
+    hyperedges = get_hyperedges(starting_list_1)
 
+    the_result_monotype = check_monotype(len(hyperedges),hyperedges)
 
     if the_result_monotype != "mixed":
-        nim_value = find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype)
+        nim_value = find_nim(len(vertices), len(hyperedges), the_result_monotype)
         print("the nim_value is: ",nim_value)
         
     else:
+        j = 1
         for i in range(len(starting_list)):
-            print(remove_a_step(starting_list_1,i))
+            print(i+1, "i-th level")
+            hyperedges_1 =(remove_a_step(starting_list_1,i))
+            hyperedges_2=copy.deepcopy(hyperedges_1)
+            print(hyperedges_1)
             
+            the_result_monotype= check_monotype(len(hyperedges_1),hyperedges_1)            
+            vertices_5 = get_vertices(hyperedges_1)
+            hyperedges_5 = get_hyperedges(hyperedges_1)
+
+            if the_result_monotype != "mixed":
+                nim_value = find_nim(len(vertices_5), len(hyperedges_5), the_result_monotype)
+                print("the nim_value is: ",nim_value)
         
+            while the_result_monotype == "mixed":
+                print(j, "j-th level")
+                for i in range(len(hyperedges_1)):
+                    hyperedges_2 =(remove_a_step(hyperedges_1,i))
+                    print(hyperedges_2)
+                    the_result_monotype= check_monotype(len(hyperedges_2),hyperedges_2)            
+                    vertices_6 = get_vertices(hyperedges_2)
+                    hyperedges_6 = get_hyperedges(hyperedges_2)
+                    if the_result_monotype != "mixed":
+                        nim_value = find_nim(len(vertices_6), len(hyperedges_6), the_result_monotype)
+                        print("the nim_value is: ",nim_value)
+                j+=1
 main()
