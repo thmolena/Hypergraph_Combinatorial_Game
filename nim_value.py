@@ -11,7 +11,6 @@ def remove_a_step(starting_list_1,i):
 
 
 
-
 def get_vertices(starting_list):
     vertices = []
       
@@ -97,26 +96,27 @@ def main():
         print("the nim_value is: ",nim_value)
         
     else:
+        thy(starting_list)
 
-        j=1
-        k=1
-        l=1
-        
-        for i in range(len(starting_list)):
-            print("")
-            print(i+1, "i-th level")
-            print("Starting with", starting_list_1)
-            hyperedges_1 =(remove_a_step(starting_list_1,i))
-            hyperedges_2=copy.deepcopy(hyperedges_1)
-            print(hyperedges_1)
-            vertices_5 = get_vertices(hyperedges_1)
-            hyperedges_5 = get_hyperedges(hyperedges_1)
+
+
+def thy(starting_list):
+    starting_list_1=copy.deepcopy(starting_list)
+    for i in range(len(starting_list)):
+        print("")
+        print(i+1, "i-th level")
+        print("Starting with", starting_list_1)
+        hyperedges_1 =(remove_a_step(starting_list_1,i))
+        hyperedges_2=copy.deepcopy(hyperedges_1)
+        print(hyperedges_1)
+        vertices_5 = get_vertices(hyperedges_1)
+        hyperedges_5 = get_hyperedges(hyperedges_1)
             
-            the_result_monotype= check_monotype(len(hyperedges_5),hyperedges_5)            
+        the_result_monotype= check_monotype(len(hyperedges_5),hyperedges_5)            
             
 
 
-
+"""
             if the_result_monotype != "mixed":
                 nim_value = find_nim(len(vertices_5), len(hyperedges_5), the_result_monotype)
                 print("the nim_value is: ",nim_value)
@@ -133,51 +133,8 @@ def main():
                     hyperedges_6 = get_hyperedges(hyperedges_2)
 
                     the_result_monotype= check_monotype(len(hyperedges_6),hyperedges_6)            
-                    
-                    if the_result_monotype != "mixed":
-                        nim_value = find_nim(len(vertices_6), len(hyperedges_6), the_result_monotype)
-                        print("the nim_value is: ",nim_value)
 
-                    if the_result_monotype == "mixed":
-
-                        for i in range(len(hyperedges_2)):
-                            print("")
-                            print(k, "k-th level")
-                            print("Starting with ", hyperedges_2)
-                            hyperedges_3 =(remove_a_step(hyperedges_2,i))
-                            hyperedges_4=copy.deepcopy(hyperedges_3)
-                            print(hyperedges_4)
-                            vertices_7 = get_vertices(hyperedges_3)
-                            hyperedges_7 = get_hyperedges(hyperedges_3)
-
-                            the_result_monotype= check_monotype(len(hyperedges_7),hyperedges_7)            
-                            
-
-                            if the_result_monotype != "mixed":
-                                nim_value = find_nim(len(vertices_7), len(hyperedges_7), the_result_monotype)
-                                print("the nim_value is: ",nim_value)
-
-                            if the_result_monotype == "mixed":
-                                for i in range(len(hyperedges_3)):
-                                    print("")
-                                    print(l, "l-th level")
-                                    print("Starting with ", hyperedges_3)
-                                    hyperedges_4 =(remove_a_step(hyperedges_3,i))
-                                    hyperedges_5=copy.deepcopy(hyperedges_4)
-                                    print(hyperedges_5)
-                                    vertices_8 = get_vertices(hyperedges_4)
-                                    hyperedges_8 = get_hyperedges(hyperedges_4)
-
-                                    the_result_monotype= check_monotype(len(hyperedges_8),hyperedges_8)            
-                            
-
-                                    if the_result_monotype != "mixed":
-                                        nim_value = find_nim(len(vertices_8), len(hyperedges_8), the_result_monotype)
-                                        print("the nim_value is: ",nim_value)
-
-
-                    
-
-#def thu_nghiem():
-
+   """                 
+      
+                 
 main()
