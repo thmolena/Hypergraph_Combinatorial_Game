@@ -1,14 +1,29 @@
-def remove_a_vertex(vertices, hyperedges):
-    if len(vertices) >0:
-        a_vertex = vertices[0]
-        vertices = vertices[1:]
-    for i in range(len(hyperedges)):
-        a_hyperedge = hyperedges[i]
-        a_letter = a_hyperedge.find(a_vertex)
-def remove_a_hyperedge(vertices,hyperedges):
-    if len(hyperedges) >0:
-        hyperedges = hyperedges[1:]
+import copy
+def remove_a_step(starting_list_1,i):
+    starting_list_2 = copy.deepcopy(starting_list_1)
+    print("Remove " , starting_list_1[i])
+     
+    for j in range(len(starting_list_1)):
+        a_letter = starting_list_1[j].find(starting_list_1[i])
+        if a_letter != -1:
+            starting_list_2.remove(starting_list_1[j])
+    return starting_list_2
+
+def abc(starting_list_2):
+    vertices = []
+    hyperedges = []
+    
+    for i in range(len(starting_list_2)):
+        if len(starting_list_2[i]) == 1:
+            vertices.append(starting_list_2[i])
+        else:
+            hyperedges.append(starting_list_2[i])
+    number_of_vertices = len(vertices)
+    number_of_hyperedges = len(hyperedges)
+    print("The list of the vertices: ",vertices)
+    print("The list of the hyperedges: ",hyperedges)
     return hyperedges
+
 
 def oddly_uniform(number_of_vertices, number_of_hyperedges):
     if number_of_vertices %2 == 0 and number_of_hyperedges %2 == 0:
@@ -20,6 +35,7 @@ def oddly_uniform(number_of_vertices, number_of_hyperedges):
     else:
         nim_value = 3
     return nim_value
+
 def evenly_uniform(number_of_vertices, number_of_hyperedges):
     if number_of_vertices %2 == 0 and number_of_hyperedges %2 == 0:
         nim_value = 0
@@ -30,14 +46,14 @@ def evenly_uniform(number_of_vertices, number_of_hyperedges):
     else:
         nim_value = 3
     return nim_value
+
 def find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype):
     if the_result_monotype == "oddly":
         nim_value = oddly_uniform(number_of_vertices, number_of_hyperedges)
     elif the_result_monotype == "evenly":
         nim_value = evenly_uniform(number_of_vertices, number_of_hyperedges)
-    else:
-        nim_value = "unknown"
     return nim_value
+
 def check_monotype(number_of_hyperedges,hyperedges):
     result_monotype = []
     for i in range(number_of_hyperedges):
@@ -52,25 +68,39 @@ def check_monotype(number_of_hyperedges,hyperedges):
     else:
         the_result_monotype = "mixed"
     return the_result_monotype
+
 def main():
-    number_of_vertices = input("How many vertices do you start with? ")
-    number_of_vertices = int(number_of_vertices)
+    starting_number = input("Input the number of all vertices and hyperedges to start with? ")
+    starting_number = int(starting_number)
+    starting_list = []
+
+    for i in range (starting_number):
+        starting = input("Input a vertex or a hyperedge: ")
+        starting_list.append(starting)
+
+    starting_list_1=copy.deepcopy(starting_list)
     vertices = []
-    for i in range(number_of_vertices):
-        vertex = input("Input a vertex: ")
-        vertices.append(vertex)
-    number_of_hyperedges = input("How many hyperedges do you start with? ")
-    number_of_hyperedges = int(number_of_hyperedges)
     hyperedges = []
-    for i in range(number_of_hyperedges):
-        hyperedge = input("Input an hyperedge : ")
-        hyperedges.append(hyperedge)
+    
+    for i in range (starting_number):
+        if len(starting_list[i]) == 1:
+            vertices.append(starting_list[i])
+        else:
+            hyperedges.append(starting_list[i])
+    number_of_vertices = len(vertices)
+    number_of_hyperedges = len(hyperedges)
     the_result_monotype = check_monotype(number_of_hyperedges,hyperedges)
     print("The list of the vertices: ",vertices)
     print("The list of the hyperedges: ",hyperedges)
-    print(the_result_monotype)
-    nim_value = find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype)
-    print("the nim_value is: ",nim_value)
-    new_vertices = remove_a_vertex(vertices, hyperedges)
-    print(new_vertices)
+
+
+    if the_result_monotype != "mixed":
+        nim_value = find_nim(number_of_vertices, number_of_hyperedges, the_result_monotype)
+        print("the nim_value is: ",nim_value)
+        
+    else:
+        for i in range(len(starting_list)):
+            print(remove_a_step(starting_list_1,i))
+            
+        
 main()
