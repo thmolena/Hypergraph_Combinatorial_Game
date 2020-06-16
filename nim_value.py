@@ -85,6 +85,12 @@ def main():
         starting = input("Input a vertex or a hyperedge: ")
         starting_list.append(starting)
 
+    starting_list_1=copy.deepcopy(starting_list)    
+    thy(starting_list_1)
+
+
+
+def thy(starting_list):
     starting_list_1=copy.deepcopy(starting_list)
     vertices = get_vertices(starting_list_1)
     hyperedges = get_hyperedges(starting_list_1)
@@ -94,25 +100,20 @@ def main():
     if the_result_monotype != "mixed":
         nim_value = find_nim(len(vertices), len(hyperedges), the_result_monotype)
         print("the nim_value is: ",nim_value)
-        
+    
     else:
-        thy(starting_list)
-
-
-
-def thy(starting_list):
-    starting_list_1=copy.deepcopy(starting_list)
-    for i in range(len(starting_list)):
-        print("")
-        print(i+1, "i-th level")
-        print("Starting with", starting_list_1)
-        hyperedges_1 =(remove_a_step(starting_list_1,i))
-        hyperedges_2=copy.deepcopy(hyperedges_1)
-        print(hyperedges_1)
-        vertices_5 = get_vertices(hyperedges_1)
-        hyperedges_5 = get_hyperedges(hyperedges_1)
+        starting_list_1=copy.deepcopy(starting_list)
+        for i in range(len(starting_list)):
+            print("")
+            print(i+1, "i-th level")
+            print("Starting with", starting_list_1)
+            hyperedges_1 =(remove_a_step(starting_list_1,i))
+            hyperedges_2=copy.deepcopy(hyperedges_1)
+            print(hyperedges_1)
+            vertices_5 = get_vertices(hyperedges_1)
+            hyperedges_5 = get_hyperedges(hyperedges_1)
             
-        the_result_monotype= check_monotype(len(hyperedges_5),hyperedges_5)            
+            the_result_monotype= check_monotype(len(hyperedges_5),hyperedges_5)            
             
 
 
@@ -125,7 +126,7 @@ def thy(starting_list):
                 for i in range(len(hyperedges_1)):
                     print("")
                     print(j, "j-th level")
-                    print("Starting with ", hyperedges_1)
+                    print("Starting with ", hyper/edges_1)
                     hyperedges_2 =(remove_a_step(hyperedges_1,i))
                     hyperedges_3=copy.deepcopy(hyperedges_2)
                     print(hyperedges_3)
@@ -136,5 +137,8 @@ def thy(starting_list):
 
    """                 
       
-                 
+                    
+
+#def thu_nghiem():
+
 main()
