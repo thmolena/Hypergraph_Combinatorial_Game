@@ -1,3 +1,4 @@
+  
 import copy
 def remove_a_step(starting_list_1,i):
     starting_list_2 = copy.deepcopy(starting_list_1)
@@ -91,8 +92,6 @@ def main():
 
 def ahihi(starting_list_1,i):
     starting_list_2 = copy.deepcopy(starting_list_1)
-    print("")
-    print(i, "i-th level")
     print("Starting with", starting_list_1)
     starting_list_3 = remove_a_step(starting_list_2,i)
     print(starting_list_3)
@@ -114,45 +113,15 @@ def ahaha(starting_list_1):
         print("Cannot find the nim value yet since it is mixed.")
     return nim_value
 
-def thy(starting_list_1):
-    
+def thy(starting_list_1,j=0):
     nim_value = ahaha(starting_list_1)
     if nim_value == 1000:
-
+        j+=1
         for i in range(len(starting_list_1)):
+            print("")
+            print("This is the ",j, "level)
+       
             starting_list_3 = ahihi(starting_list_1,i)
 
-            nim_value_5 = ahaha(starting_list_3)
-
-            if nim_value_5 == 1000:
-                for i in range(len(starting_list_3)):
-                    starting_list_4 = ahihi(starting_list_3,i)
-
-                    nim_value_6 = ahaha(starting_list_4)
-
-                    if nim_value_6 == 1000:
-                        for i in range(len(starting_list_4)):
-                            starting_list_5 = ahihi(starting_list_4,i)
-
-                            nim_value_7 = ahaha(starting_list_5)
-                            
-                            if nim_value_7 == 1000:
-                                for i in range(len(starting_list_5)):
-                                    starting_list_6 = ahihi(starting_list_5,i)
-
-                                    nim_value_8 = ahaha(starting_list_6)
-
-                                    if nim_value_8 == 1000:
-                                        for i in range(len(starting_list_6)):
-                                            starting_list_7 = ahihi(starting_list_6,i)
-
-                                            nim_value_9 = ahaha(starting_list_7)
-
-                                             
-                                        
-      
-                    
-
-#def thu_nghiem():
-
+            thy(starting_list_3,j)
 main()
