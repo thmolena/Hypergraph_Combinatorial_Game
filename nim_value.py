@@ -102,8 +102,20 @@ def ahihi(starting_list_1,i):
 def ahaha(starting_list_1):
     vertices = get_vertices(starting_list_1)
     hyperedges = get_hyperedges(starting_list_1)
-    print("There are ", len(vertices), "vertices")
-    print("There are ", len(hyperedges), "hyperedges")
+
+    if len(vertices) % 2 == 0:
+        the_vertex = "even"
+    else:
+        the_vertex = "odd"
+
+    if len(hyperedges) % 2 == 0:
+        the_hyperedge = "even"
+    else:
+        the_hyperedge = "odd"
+        
+    
+    print("There are ", the_vertex, " ( ", len(vertices), ")vertices")
+    print("There are ", the_hyperedge, "( ", len(hyperedges), ") hyperedges")
     the_result_monotype = check_monotype(len(hyperedges),hyperedges)
 
     if the_result_monotype != "mixed":
