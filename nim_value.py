@@ -102,7 +102,8 @@ def ahihi(starting_list_1,i):
 def ahaha(starting_list_1):
     vertices = get_vertices(starting_list_1)
     hyperedges = get_hyperedges(starting_list_1)
-
+    print("There are ", len(vertices), "vertices")
+    print("There are ", len(hyperedges), "hyperedges")
     the_result_monotype = check_monotype(len(hyperedges),hyperedges)
 
     if the_result_monotype != "mixed":
@@ -119,7 +120,7 @@ def thy(starting_list_1,j=0):
         j+=1
         for i in range(len(starting_list_1)):
             print("")
-            print("This is the ",j, "level)
+            print("This is the ",j, "level")
        
             starting_list_3 = ahihi(starting_list_1,i)
 
