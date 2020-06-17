@@ -1,4 +1,3 @@
-  
 import copy
 def remove_a_step(starting_list_1,i):
     starting_list_2 = copy.deepcopy(starting_list_1)
