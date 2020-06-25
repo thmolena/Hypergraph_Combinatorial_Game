@@ -1,4 +1,4 @@
-# Game_Theory
+# Combinatorial_Game_Theory
 
 In a period of 4 weeks, I finished my short Mathematics Journal in the topics of Graph Theory and Combinatorial Game Theory with my 3 Original Lemmas and 4 Original Theorems 
 (with full Mathematical proofs provided.)
