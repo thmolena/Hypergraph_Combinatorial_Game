@@ -2,6 +2,8 @@
 
 I created two new impartial games (one new game just today) on different #DiscreteStructures, especially on #Hypergraphs, and wrote Mathematical Theorems and Proofs analyzing the winning strategy that always works perfectly for all positions in my two new games. From the working winning strategy, it is not hard to create the games and let the players play versus the Machine.
 
+The rule of the game is that player A and player B will play alternatively. In a turn, one player can only remove one vertex, or one face (hyperedge). Whoever removes the last vertex wins. 
+
 "The goal of studying combinatorial games is to determine a winning strategy for them. A winning strategy for player A (respectively, B) in a combinatorial game is a strategy that specifies a move from each position that guarantees a win for player A (respectively B)."
 
 There are 2 types of Combinatorial Games, which are impartial games and partisan games. I am more focused on the impartial games. An example of impartial games is #TheGameOfNim. In The Game Of Nim, to analyze a winning strategy, Mathematicians used the Theorem called "the Sprague–Grundy Theorem." If the Nim-value of a position (sometimes it is called Nimber, or Grundy number) is found, it is always a way to win the game from all positions.
