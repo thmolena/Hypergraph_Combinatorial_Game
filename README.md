@@ -5,12 +5,12 @@
 ## "The goal of studying combinatorial games is to determine a winning strategy for them. A winning strategy for player A (respectively, B) in a combinatorial game is a strategy that specifies a move from each position that guarantees a win for player A (respectively B)."
 ## There are 2 types of Combinatorial Games, which are impartial games and partisan games. I am more focused on the impartial games. An example of impartial games is #TheGameOfNim. In The Game Of Nim, to analyze a winning strategy, Mathematicians used the Theorem called "the Sprague–Grundy Theorem." If the Nim-value of a position (sometimes it is called Nimber, or Grundy number) is found, it is always a way to win the game from all positions. The reason is that there are two famous theorems about impartial games. The first one is that "Every impartial game is equivalent to a nim-heap." The second one is that "In a normal Nim game, the player making the first move has a winning strategy if and only if the nim-sum of the sizes of the heaps is not zero. Otherwise, the second player has a winning strategy."
 
-### I am so excited that I have successfully created two new Combinatorial Games (impartial games) on new #DiscreteStructures.
+## I am so excited that I have successfully created two new Combinatorial Games (impartial games) on new #DiscreteStructures.
 
-### I am also happy that I have finished my Original Mathematics Journal on #GraphTheory and #CombinatorialGameTheory with my 3 Original Lemmas and 4 Original Theorems (with full Mathematical proofs) on analyzing the Winning Strategy for my games.
+## I am also happy that I have finished my Original Mathematics Journal on #GraphTheory and #CombinatorialGameTheory with my 3 Original Lemmas and 4 Original Theorems (with full Mathematical proofs) on analyzing the Winning Strategy for my games.
 
-### My next goal is to implement the game on Github so everyone can try playing against the Machine.
-### I am also looking forward to having some collaborations on #Kaggle projects and any other open source platform to enrich my knowledge on #DataScience and #MachineLearning.
+## My next goal is to implement the game on Github so everyone can try playing against the Machine.
+## I am also looking forward to having some collaborations on #Kaggle projects and any other open source platform to enrich my knowledge on #DataScience and #MachineLearning.
 
 "A combinatorial game is a two player game that satisfies the following conditions: The game is deterministic: there is no randomization mechanism such as flipping a coin or rolling a die. There is perfect information in the game: each player knows all the information about the state of the game, and nothing is hidden."
 
