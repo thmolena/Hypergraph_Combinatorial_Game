@@ -1,4 +1,4 @@
-# Combinatorial_Game_Analysis
+# Hypergraph_Combinatorial_Game_Analysis
 
 ### This is a program used for analyzing the Winning Strategy in all Combinatorial Games (Impartial Games) playing on a specific Discrete Structure called Hypergraph. The Winning Strategy is analyzed by all of the Nim values of all positions.
 
