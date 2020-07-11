@@ -1,4 +1,6 @@
-# Combinatorial_Game_Theory
+# Combinatorial_Game_Analysis
+
+# This is a program used to analyze the Winning Strategy for all of the Combinatorial Games played on Hypergraphs.
 
 #### I created two new impartial games on different #DiscreteStructures, especially on #Hypergraphs, and wrote Mathematical Theorems and Proofs analyzing the winning strategy that always works perfectly for all positions in my two new games. From the working winning strategy, it is not hard to create the games and let the players play versus the Machine.
 #### The basic rule of the two games is that these two games are impartial games. Player A and player B will play alternatively. In each turn, a player can only remove one vertex, or one face (hyperedge). Whoever removes the last vertex wins. 
